@@ -1,13 +1,16 @@
+# Warning: This file is copied from another repo.
+#   Any changes made to outside of the source repo may be overridden. 
+#   To modify, change the file at the source repo
+#
+#   https://github.com/think-zambia-foundation/github-settings/tree/main/.github/workflows/auto-merge-release-bump-pr.yml
 name: Check auto merge service account pull requests
 
 on:
   pull_request:
-    types: [labeled, unlabeled, synchronize, opened, edited, ready_for_review, reopened, unlocked]
+    types: [opened, reopened, edited, ready_for_review]
+  pull_request_target:
     branches:
       - 'bot/**'
-  check_suite: 
-    types: [completed]
-  status: {}
 
 jobs:
   automerge:
