@@ -6,7 +6,7 @@
 name: Check auto merge service account pull requests
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, reopened, edited, ready_for_review]
     branches:
       - 'bot**'
