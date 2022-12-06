@@ -8,8 +8,8 @@ name: Check auto merge service account pull requests
 on:
   pull_request:
     types: [opened, reopened, edited, ready_for_review]
-    branches:
-      - 'bot**'
+    paths:
+      - '.github/'
 
 jobs:
   automerge:
