@@ -9,7 +9,7 @@ on:
   pull_request:
     types: [opened, reopened, edited, ready_for_review]
     paths:
-      - '.github/'
+      - '.github/**'
 
 jobs:
   automerge:
