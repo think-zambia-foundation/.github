@@ -1,9 +1,13 @@
 name: Check Think Zambia Developer Agreement
-'on': pull_request
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, ready_for_review]
+  workflow_dispatch: {} #to enable manual triggering of the action 
 
 jobs:
   enforce-pull-request-title-includes-jira-issue-key:
     runs-on: ubuntu-latest
     steps:
       - name: Enforce Pull Request Title includes Jira Issue Key
-        uses: ryanvade/enforce-pr-title-style-action@v1 
+        uses: ryanvade/enforce-pr-title-style-action@v1
