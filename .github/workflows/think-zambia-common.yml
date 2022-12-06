@@ -3,7 +3,7 @@ name: Check Think Zambia Developer Agreement
 on:
   pull_request:
     types: [opened, reopened, edited, ready_for_review]
-  workflow_dispatch: {} #to enable manual triggering of the action 
+  workflow_dispatch: {} #to enable manual triggering of the action
 
 jobs:
   enforce-pull-request-title-includes-jira-issue-key:
