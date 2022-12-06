@@ -6,5 +6,4 @@
 
 ## QA Steps
 <!--- How can this change be verified --->
-- [ ] Build Passes 
-
+- [ ] Build Passes
