@@ -9,7 +9,7 @@ on:
   pull_request_target:
     types: [opened, reopened, edited, ready_for_review]
     branches:
-      - 'bot/**'
+      - 'bot**'
 
 jobs:
   automerge:
