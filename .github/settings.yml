@@ -1,5 +1,6 @@
 repository:
   delete_branch_on_merge: true
+  default_branch: main
 branches:
   - name: main
     protection:
