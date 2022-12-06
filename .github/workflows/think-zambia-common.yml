@@ -1,4 +1,4 @@
-name: Check Think Zambia Developer Agreement
+name: Check Developer Agreement
 
 on:
   pull_request:
@@ -6,8 +6,17 @@ on:
   workflow_dispatch: {} #to enable manual triggering of the action.
 
 jobs:
-  enforce-pull-request-title-includes-jira-issue-key:
+  Pull-request-title-includes-jira-issue-key:
     runs-on: ubuntu-latest
     steps:
-      - name: Enforce Pull Request Title includes Jira Issue Key
+      - name: Pull request title includes jira issue (E.g. JIRA-123)
         uses: ryanvade/enforce-pr-title-style-action@v1
+  QA-steps-checklist-done:
+    runs-on: ubuntu-latest
+    steps:
+      - name: QA steps checklist completed (E.g. [x] Build passed)
+        uses: mheap/require-checklist-action@v1
+        with:
+          requireChecklist: true # If this is true and there are no checklists detected, the action will fail
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

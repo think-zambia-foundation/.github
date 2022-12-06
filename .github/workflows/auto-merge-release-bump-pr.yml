@@ -1,4 +1,4 @@
-name: Auto merge release bump PR
+name: Check auto merge service account pull requests
 
 on:
   pull_request:
@@ -12,16 +12,15 @@ on:
 jobs:
   automerge:
     runs-on: ubuntu-latest
+    if: github.actor == 'tzdevsa'
     steps:
     - name: Automerging
       uses: pascalgn/automerge-action@v0.7.5
-      #the actor that created pr 
-      if: github.actor == 'tzdevsa'
       env:
         GITHUB_TOKEN: "${{ secrets.API_TOKEN_GITHUB }}"
         GITHUB_LOGIN: tzdevsa
         MERGE_LABELS: ""
         MERGE_METHOD: "squash"
-        MERGE_COMMIT_MESSAGE: "Auto merge push to all repositories."
+        MERGE_COMMIT_MESSAGE: "Auto merge service account pull requests."
         MERGE_RETRIES: "10"
         MERGE_RETRY_SLEEP: "10000"
